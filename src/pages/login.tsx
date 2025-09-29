@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import logo from "../assets/images/IFFAI Logo.png";
+import banner from "../assets/images/AI New.jpg";
 
 export default function RegisterLogin() {
   const [isRegister, setIsRegister] = useState(false);
@@ -124,10 +126,10 @@ const getPasswordStrength = (
       {/* Left Side - Image */}
       <div className="w-full md:w-1/2 h-64 sm:h-80 md:h-auto">
         <img
-          src="src/assets/images/AI New.jpg"
+          src={banner}
           alt="IFFAI Banner"
           className="w-full h-full object-cover object-top"
-          
+
         />
       </div>
       
@@ -138,7 +140,7 @@ const getPasswordStrength = (
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img
-            src="src/assets/images/IFFAI Logo.png"
+            src={logo}
             alt="Company Logo"
             className="h-30 sm:h-30"
           />

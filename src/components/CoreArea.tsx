@@ -1,40 +1,46 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import learn from "../assets/images/AI Learn 3D.jpg";
+import certi from "../assets/images/AI certi1.jpg";
+import consult from "../assets/images/AI Consulting2.jpg";
+import research from "../assets/images/AI research.jpg";
+import hub from "../assets/images/AI research1.jpg";
+import bgImg from "../assets/images/AI certi.jpg";
 
 const slides = [
   {
     title: "Courses & Curriculum Development",
     content:
       "IFFAI provides AI education across all levels — from K–12 electives to AI-integrated university programs in engineering, medicine, business, and science. Professionals can upskill through specialized tracks in Generative AI, Cloud AI, Robotics, and more. Corporates benefit from tailored bootcamps and workforce-ready AI training solutions.",
-    img: "src/assets/images/AI Learn 3D.jpg",
+    img: learn,
     bg: "bg-gradient-to-br from-green-50 to-teal-100",
   },
   {
     title: "Certifications",
     content:
       "IFFAI offers globally recognized AI certifications, from foundational to specialist levels, in partnership with ISU and IQF. Our tiered programs support professionals across sectors including Finance, Supply Chain, UI/UX, and Digital Marketing. Trusted by academia, industry, and government, these credentials are designed for high-impact careers in AI.",
-    img: "src/assets/images/AI certi1.jpg",
+    img: certi,
     bg: "bg-gradient-to-br from-rose-50 to-pink-100",
   },
   {
     title: "Consulting & Advisory",
     content:
       "IFFAI offers AI strategy consulting for enterprises, government agencies, and NGOs—driving digital transformation through ethical, compliant, and impactful AI integration. Our services include AI governance design, talent development, and advisory on policy and regulation. We align AI innovation with organizational goals and societal responsibility.",
-    img: "src/assets/images/AI Consulting2.jpg",
+    img: consult,
     bg: "bg-gradient-to-br from-yellow-50 to-orange-50",
   },
   {
     title: "Research & Innovation",
     content:
       "IFFAI leads applied AI research across domains like Generative AI, Smart Cities, Healthcare, and Climate, partnering with universities and R&D centers. We incubate AI innovations with industry and share knowledge through global conferences, white papers, and journals. Our mission: translating research into meaningful societal impact.",
-    img: "src/assets/images/AI research.jpg",
+    img: research,
     bg: "bg-gradient-to-br from-sky-50 to-indigo-100",
   },
   {
     title: "AI Hubs & Global Outreach",
     content:
       "IFFAI is building AI Hubs worldwide to foster collaboration between academia, government, startups, and corporates. Through live projects, hackathons, and internships, these hubs drive real-world innovation and skills development. Our inclusive AI literacy initiatives ensure no community is left behind in the AI revolution.",
-    img: "src/assets/images/AI research1.jpg",
+    img: hub,
     bg: "bg-gradient-to-br from-stone-50 to-slate-100",
   },
 ];
@@ -45,11 +51,11 @@ const StackingBoxes = () => {
     target: containerRef,
     offset: ["start start", "end end"],
   });
-
+  
   return (
     <div
   className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('src/assets/images/AI certi.jpg')" }}
+  style={{ backgroundImage: `url(${bgImg})`,}}
 >
   
   {/* 🌟 Fixed Header Overlay */}
@@ -73,7 +79,7 @@ const StackingBoxes = () => {
       const start = index / slides.length;
       const end = (index + 1) / slides.length;
       const y = useTransform(scrollYProgress, [start, end], ["100%", "0%"]);
-      
+
 
       return (
         <motion.div

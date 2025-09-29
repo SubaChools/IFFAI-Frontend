@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search, ShoppingCart } from "lucide-react"; // npm install lucide-react
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/IFFAI Logo.png";
 
 
 export default function Header() {
@@ -24,7 +25,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img
-            src="/src/assets/images/IFFAI Logo.png" // replace with PMI-style logo
+            src={Logo} // replace with PMI-style logo
             alt="IFFAI Logo"
             className="h-25"            
           />

@@ -36,7 +36,7 @@ import logo32 from "../assets/new/partner (28).png";
 import logo33 from "../assets/new/partner (29).png";
 import logo34 from "../assets/new/partner (30).png";
 import logo35 from "../assets/new/partner (31).png";
-
+import partner from "../assets/images/partner.jpeg";
 
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo10, logo11, logo12, logo13, logo14, logo15, logo16,
@@ -49,7 +49,7 @@ const partnersLogoGrid: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50 mt-8 py-40 px-6 select-none"
     style={{
-    backgroundImage: `url('src/assets/images/partner.jpeg')`,
+    backgroundImage: `url(${partner})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

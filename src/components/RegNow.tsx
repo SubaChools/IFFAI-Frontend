@@ -1,7 +1,10 @@
+import bgImg from "../assets/images/AI2.jpg";
+import sideImg from "../assets/images/learnAI.jpg";
+
 const RegNow: React.FC = () => {
   return (
     <section className="w-full py-16"
-    style={{ backgroundImage: "url('src/assets/images/AI2.jpg')" }}>
+    style={{ backgroundImage: `url(${bgImg})`, }}>
       <div className="container mx-auto px-2 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* ✅ Left: Text Content */}
          <div className="h-full">
@@ -28,7 +31,7 @@ const RegNow: React.FC = () => {
         {/* ✅ Right: Big Image */}
         <div className="h-full ">
           <img
-            src="src/assets/images/learnAI.jpg"
+            src={sideImg}
             alt="AI"
             className="w-full max-w-lg rounded-2xl rounded-tl-full rounded-tr-full rounded-bl-full object-cover shadow-lg"
          

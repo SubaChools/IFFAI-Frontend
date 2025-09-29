@@ -1,6 +1,7 @@
 import React from "react";
 import { motion} from "framer-motion";
 import type { Variants } from "framer-motion";
+import sideImg from "../assets/images/AI20.jpg";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -61,11 +62,11 @@ const HomePage: React.FC = () => {
           className="w-full md:w-1/3"
         >
           <img
-            src="src/assets/images/AI20.jpg"
+            src={sideImg}
             alt="Team"
             className="rounded-xl shadow-lg"
           />
-          
+
         </motion.div>
 
         {/* Right Content (70%) */}
