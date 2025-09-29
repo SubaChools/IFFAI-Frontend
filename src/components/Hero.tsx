@@ -1,3 +1,4 @@
+import video from "https://www.choolsgroup.com/iffai/IFFAI%20AI%20ALL.mp4";
 const Hero = () => {
   return (
     <section className="relative w-screen h-screen overflow-hidden">
@@ -8,7 +9,7 @@ const Hero = () => {
         loop
         playsInline
       >
-        <source src="/src/assets/iffai video final.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
