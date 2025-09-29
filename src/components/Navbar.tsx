@@ -24,7 +24,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <img
-            src="/src/assets/IFFAI Logo.png" // replace with PMI-style logo
+            src="/src/assets/images/IFFAI Logo.png" // replace with PMI-style logo
             alt="IFFAI Logo"
             className="h-25"
             

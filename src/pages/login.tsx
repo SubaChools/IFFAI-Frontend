@@ -124,7 +124,7 @@ const getPasswordStrength = (
       {/* Left Side - Image */}
       <div className="w-full md:w-1/2 h-64 sm:h-80 md:h-auto">
         <img
-          src="src/assets/AI New.jpg"
+          src="src/assets/images/AI New.jpg"
           alt="IFFAI Banner"
           className="w-full h-full object-cover object-top"
         />
@@ -137,7 +137,7 @@ const getPasswordStrength = (
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img
-            src="src/assets/IFFAI Logo.png"
+            src="src/assets/images/IFFAI Logo.png"
             alt="Company Logo"
             className="h-30 sm:h-30"
           />

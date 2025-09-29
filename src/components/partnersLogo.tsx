@@ -50,14 +50,14 @@ const partnersLogoGrid: React.FC = () => {
   return (
     <section className="bg-gradient-to-r from-indigo-50 via-white to-indigo-50 mt-8 py-40 px-6 select-none"
     style={{
-    backgroundImage: `url('src/assets/partner.jpeg')`,
+    backgroundImage: `url('src/assets/images/partner.jpeg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
   }} >
 {/* Title inside a circle */}
       <div className="flex justify-center mb-8 ">
-        <div className="w-90 h-20 bg-blue-900 rounded-full flex justify-center shadow-lg">
+        <div className="w-90 h-20 bg-white rounded-full flex justify-center shadow-lg">
           <h2 className="text-4xl text-green-500 uppercase md:text-4xl font-extrabold mt-6 drop-shadow-lg">
             OUR PARTNERS
           </h2>

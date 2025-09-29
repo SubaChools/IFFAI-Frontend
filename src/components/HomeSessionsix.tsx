@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 // 👇 Replace this path with your actual image
-import mainImage from "../assets/AI 3d.jpg";
+import mainImage from "../assets/images/AI certi2.jpg";
 
 type Stat = { id: string; end: number; label: string };
 
 const stats: Stat[] = [
   { id: "years", end: 30, label: "Years in Business" },
   { id: "ea", end: 32000, label: "Projects's Completed" },
-  { id: "detected", end: 15000, label: "Early Case Studies" },
+  { id: "detected", end: 15000, label: "Case Studies" },
 ];
 
 function formatDisplay(value: number, end: number): string {
@@ -100,11 +100,11 @@ const Sixpart: React.FC = () => {
         {/* Right image + stats */}
         <div className="relative order-1 lg:order-2 overflow-visible" ref={rootRef}>
           {/* ✅ IMAGE BACKGROUND */}
-          <div className="rounded-3xl overflow-hidden shadow-lg relative z-0">
+          <div className="rounded-3xl rounded-tl-4xl rounded-bl-full overflow-hidden shadow-lg relative z-0">
             <img
               src={mainImage}
               alt="Office"
-              className="w-full h-80 sm:h-[420px] md:h-[520px] object-cover"
+              className="w-full h-80  sm:h-[420px] md:h-[520px] object-cover"
             />
           </div>
 
@@ -118,7 +118,7 @@ const Sixpart: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: i * 0.12 }}
-                  className="w-64 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-300"
+                  className="w-30 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-300"
                   style={{ pointerEvents: "auto" }}
                 >
                   <div className="text-center">

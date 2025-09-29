@@ -61,7 +61,7 @@ const HomePage: React.FC = () => {
           className="w-full md:w-1/3"
         >
           <img
-            src="src/assets/AI20.jpg"
+            src="src/assets/images/AI20.jpg"
             alt="Team"
             className="rounded-xl shadow-lg"
           />
