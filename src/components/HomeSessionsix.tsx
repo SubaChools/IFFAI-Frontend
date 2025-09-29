@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 // 👇 Replace this path with your actual image
 import mainImage from "../assets/images/AI certi2.jpg";
-
 type Stat = { id: string; end: number; label: string };
 
 const stats: Stat[] = [

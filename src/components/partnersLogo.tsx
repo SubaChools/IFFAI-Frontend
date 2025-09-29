@@ -44,7 +44,6 @@ const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo10, l
   logo33, logo34, logo35
 ];
 const LOGO_WIDTH = 140;
-
 const partnersLogoGrid: React.FC = () => {
     const extendedLogos = [...logos, ...logos]; // Duplicate for infinite loop
   return (

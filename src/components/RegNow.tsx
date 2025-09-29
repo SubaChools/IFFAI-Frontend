@@ -31,7 +31,8 @@ const RegNow: React.FC = () => {
             src="src/assets/images/learnAI.jpg"
             alt="AI"
             className="w-full max-w-lg rounded-2xl rounded-tl-full rounded-tr-full rounded-bl-full object-cover shadow-lg"
-          />
+         
+         />
         </div>
       </div>
     </section>

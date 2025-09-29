@@ -73,6 +73,7 @@ const StackingBoxes = () => {
       const start = index / slides.length;
       const end = (index + 1) / slides.length;
       const y = useTransform(scrollYProgress, [start, end], ["100%", "0%"]);
+      
 
       return (
         <motion.div

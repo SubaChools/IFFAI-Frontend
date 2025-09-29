@@ -127,6 +127,7 @@ const getPasswordStrength = (
           src="src/assets/images/AI New.jpg"
           alt="IFFAI Banner"
           className="w-full h-full object-cover object-top"
+          
         />
       </div>
       

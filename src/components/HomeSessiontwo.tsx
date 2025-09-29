@@ -65,6 +65,7 @@ const HomePage: React.FC = () => {
             alt="Team"
             className="rounded-xl shadow-lg"
           />
+          
         </motion.div>
 
         {/* Right Content (70%) */}
