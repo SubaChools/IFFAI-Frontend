@@ -13,7 +13,8 @@ export default function RegisterLogin() {
     phone: "",
     address: "",
     password: "",
-    confirmPassword: "",
+    subscribe: "",
+    terms:"",
   });
   const [phone, setPhone] = useState("");
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -34,7 +35,6 @@ export default function RegisterLogin() {
     setRegisterData({
       ...registerData,
       password: generated,
-      confirmPassword: generated,
     });
   };
 const getPasswordStrength = (
@@ -86,7 +86,8 @@ const getPasswordStrength = (
       phone: "",
       address: "",
       password: "",
-      confirmPassword: "",
+      subscribe: "",
+      terms:"",
     });
   };
 
@@ -98,7 +99,7 @@ const getPasswordStrength = (
     }
     alert("Login Successful!");
     setLoginData({ email: "", password: "" });
-    navigate("/mgdashboard");
+    navigate("/");
   };
   // ---------- Social Logins ----------
   const handleGoogleLogin = () => {
@@ -131,22 +132,22 @@ const getPasswordStrength = (
       
 
     {/* Right Side - Form */}
-    <div className="w-full md:w-1/2 flex items-center justify-center bg-white p-6 ">
+    <div className="w-full md:w-1/2 flex items-center justify-center bg-white ">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img
             src="src/assets/IFFAI Logo.png"
             alt="Company Logo"
-            className="h-16 sm:h-20"
+            className="h-30 sm:h-30"
           />
         </div>
 
         {/* Header */}
-        <h1 className="text-xl font-bold text-center text-gray-800">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
           {isRegister ? "Create Account" : "Login"}
         </h1>
-        <p className="text-m text-center text-gray-500 mb-2">
+        <p className="text-l text-center text-gray-500 mb-2">
           {isRegister
             ? "Join IFFAI – Your Gateway to AI Mastery!"
             : "Welcome back! Please login."}
@@ -172,7 +173,7 @@ const getPasswordStrength = (
               </span>
             </p>
           ) : (
-            <p className="text-xs text-gray-600">
+            <p className="text-m text-gray-600">
               Don’t have an account?{" "}
               <span
                 className="text-indigo-600 font-semibold cursor-pointer"
@@ -186,14 +187,14 @@ const getPasswordStrength = (
         {/* Forms */}
         {!isRegister ? (
           // -------- Login Form --------
-          <form onSubmit={handleLoginSubmit} className="space-y-3">
+          <form onSubmit={handleLoginSubmit} className="space-y-10">
             <input
               type="email"
               name="email"
               value={loginData.email}
               onChange={handleLoginChange}
               placeholder="Email"
-              className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500"
+              className="w-full border rounded-md px-3 py-2 text-m focus:ring-2 focus:ring-indigo-500"
               required
             />
             <input
@@ -202,18 +203,18 @@ const getPasswordStrength = (
               value={loginData.password}
               onChange={handleLoginChange}
               placeholder="Password"
-              className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500"
+              className="w-full border rounded-md px-3 py-2 text-m focus:ring-2 focus:ring-indigo-500"
               required
             />
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-2 rounded-md text-sm hover:bg-indigo-700 transition"
+              className="w-full bg-indigo-600 text-white py-2 rounded-md text-m hover:bg-indigo-700 transition"
             >
               {loading ? "Processing..." : "Login"}
             </button>
             <p
               onClick={() => navigate("/register/forgotpassword")}
-              className="text-xs text-indigo-600 cursor-pointer mt-1 text-center"
+              className="text-m text-indigo-600 cursor-pointer mt-1 text-center"
             >
               Forgot Password?
             </p>
@@ -227,7 +228,7 @@ const getPasswordStrength = (
               value={registerData.Name}
               onChange={handleRegisterChange}
               placeholder="Full Name"
-              className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500"
+              className="w-full border rounded-md px-3 py-2 text-m focus:ring-2 focus:ring-indigo-500"
               required
             />
             <input
@@ -236,7 +237,7 @@ const getPasswordStrength = (
               value={registerData.email}
               onChange={handleRegisterChange}
               placeholder="Email"
-              className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500"
+              className="w-full border rounded-md px-3 py-2 text-m focus:ring-2 focus:ring-indigo-500"
               required
             />
 
@@ -256,7 +257,7 @@ const getPasswordStrength = (
                 value={registerData.password}
                 onChange={handleRegisterChange}
                 placeholder="Password"
-                className="w-full border rounded-md px-3 py-2 pr-20 text-sm focus:ring-2 focus:ring-indigo-500"
+                className="w-full border rounded-md px-3 py-2 pr-20 text-m focus:ring-2 focus:ring-indigo-500"
                 required
               />
               <button
@@ -303,18 +304,18 @@ const getPasswordStrength = (
               onChange={handleRegisterChange}
               placeholder="Full Address"
               rows={2}
-              className="w-full border rounded-md px-3 py-2 text-sm focus:ring-2 focus:ring-indigo-500"
+              className="w-full border rounded-md px-3 py-2 text-m focus:ring-2 focus:ring-indigo-500"
               required
             />
 
             {/* Terms */}
             <div className="space-y-2"> 
               <label className="flex items-center space-x-2 text-sm text-gray-700"> 
-                <input type="checkbox" className="h-4 w-4" /> 
+                <input type="checkbox" value={registerData.subscribe} className="h-4 w-4" /> 
                 <span> I would like to receive email updates from products, services, and events (Optional)</span> 
               </label> 
               <label className="flex items-center space-x-2 text-sm text-gray-700"> 
-                <input type="checkbox" className="h-4 w-4" required /> 
+                <input type="checkbox" value={registerData.terms} className="h-4 w-4" required /> 
                 <span> I have read and agree to the{" "} <a href="/privacy" className="text-indigo-600 font-semibold hover:underline"> Privacy Policy </a> </span> 
               </label> 
             </div>

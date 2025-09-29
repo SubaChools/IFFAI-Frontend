@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+
 import RegisterLogin from "./pages/login";
+import Home from "./pages/HomePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -10,8 +11,9 @@ function App() {
      <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} /> 
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegisterLogin />} />
+        
       </Routes>
     </Router>
   );

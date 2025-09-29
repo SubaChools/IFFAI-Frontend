@@ -26,9 +26,10 @@ export default function Header() {
           <img
             src="/src/assets/IFFAI Logo.png" // replace with PMI-style logo
             alt="IFFAI Logo"
-            className="h-20"
+            className="h-25"
+            
           />
-          <span className="font-semibold text-gray-700 hidden sm:block">
+          <span className="font-semibold text-xl text-gray-700 hidden sm:block">
             International Federation For Artificial Intelligence
           </span>
         </div>
