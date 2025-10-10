@@ -74,7 +74,7 @@ const StackingBoxes = () => {
   className="-mt-[480px] relative"
   style={{ height: `${slides.length * 85}vh` }} // keep scrollable height
 >
-  <div className="sticky top-0 h-[85vh] flex items-center justify-center">
+  <div className="sticky top-0 h-[85vh] flex items-center justify-left">
     {slides.map((slide, index) => {
       const start = index / slides.length;
       const end = (index + 1) / slides.length;

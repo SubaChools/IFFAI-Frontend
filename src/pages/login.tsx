@@ -122,7 +122,7 @@ const getPasswordStrength = (
     window.location.href = githubAuthUrl;
   };
    return (
-     <div className="flex flex-col md:flex-row min-h-screen">
+     <div className="flex mt-35 flex-col md:flex-row min-h-screen">
       {/* Left Side - Image */}
       <div className="w-full md:w-1/2 h-64 sm:h-80 md:h-auto">
         <img
@@ -142,7 +142,7 @@ const getPasswordStrength = (
           <img
             src={logo}
             alt="Company Logo"
-            className="h-30 sm:h-30"
+            className="h-20 sm:h-20"
           />
         </div>
 
@@ -150,7 +150,7 @@ const getPasswordStrength = (
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
           {isRegister ? "Create Account" : "Login"}
         </h1>
-        <p className="text-l text-center text-gray-500 mb-2">
+        <p className="text-xl text-center text-gray-800 mb-2">
           {isRegister
             ? "Join IFFAI – Your Gateway to AI Mastery!"
             : "Welcome back! Please login."}
@@ -313,11 +313,11 @@ const getPasswordStrength = (
 
             {/* Terms */}
             <div className="space-y-2"> 
-              <label className="flex items-center space-x-2 text-sm text-gray-700"> 
+              <label className="flex items-center space-x-2 text-m text-gray-700"> 
                 <input type="checkbox" value={registerData.subscribe} className="h-4 w-4" /> 
                 <span> I would like to receive email updates from products, services, and events (Optional)</span> 
               </label> 
-              <label className="flex items-center space-x-2 text-sm text-gray-700"> 
+              <label className="flex items-center space-x-2 text-m text-gray-700"> 
                 <input type="checkbox" value={registerData.terms} className="h-4 w-4" required /> 
                 <span> I have read and agree to the{" "} <a href="/privacy" className="text-indigo-600 font-semibold hover:underline"> Privacy Policy </a> </span> 
               </label> 
@@ -338,7 +338,7 @@ const getPasswordStrength = (
             </div>
 
             {/* Social */}
-            <div className="flex justify-center gap-6 text-2xl">
+            <div className="flex justify-center gap-6 text-5xl">
               <button
                 type="button"
                 onClick={handleGoogleLogin}

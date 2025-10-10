@@ -3,11 +3,11 @@ import sideImg from "../assets/images/learnAI.jpg";
 
 const RegNow: React.FC = () => {
   return (
-    <section className="w-full py-16"
+    <section className="w-full "
     style={{ backgroundImage: `url(${bgImg})`, }}>
       <div className="container mx-auto px-2 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* ✅ Left: Text Content */}
-         <div className="h-full">
+         <div className="h-90">
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 flex flex-col  h-full w-full">
             <h2 className="text-4xl text-green-500 uppercase md:text-4xl font-extrabold drop-shadow-lg mb-8">
             Start learning 

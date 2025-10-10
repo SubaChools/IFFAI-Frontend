@@ -9,6 +9,9 @@ import PartnersLogo from "../components/partnersLogo";
 import Sectioneight from "../components/HomeSessioneight";
 import CoreArea from "../components/CoreArea";
 import RegNow from "../components/RegNow";
+import Testimonials from "../components/Testimonials ";
+import Footer from "../components/Footer";
+
 
 const HomePage = () => {
   return (
@@ -25,6 +28,8 @@ const HomePage = () => {
        <PartnersLogo />
       <Sectionsix />
       <RegNow />
+      <Testimonials />
+      <Footer />
 
      
     </>

@@ -1,144 +1,146 @@
-import React from "react";
-import { motion, useReducedMotion} from "framer-motion";
-import type {Variants } from "framer-motion";
-import { Cloud, Shield, UserCheck, type LucideIcon } from "lucide-react";
+import React, { useEffect, useRef } from 'react';
+import { motion, useAnimation, useReducedMotion } from 'framer-motion';
+import { Cloud, Shield, UserCheck, type LucideIcon } from 'lucide-react';
 
-type Service = {
+type Course = {
   Icon: LucideIcon;
   title: string;
   desc: string;
-  bg: string; // tailwind classes
+  bg: string;
 };
 
-const services: Service[] = [
+const courses: Course[] = [
   {
     Icon: Cloud,
-    title: "Cloud Solutions",
-    desc:
-      "Sagittis donec cursus sed pretium varius non sagittis ut. Amet mi augue purus malesuada pulvinar.",
-    bg: "bg-green-50 border-green-100",
+    title: 'Cloud Solutions',
+    desc: 'Scalable cloud infrastructure tailored to your needs.',
+    bg: 'bg-green-50 border-green-100',
   },
   {
     Icon: Shield,
-    title: "Cybersecurity",
-    desc:
-      "Sagittis donec cursus sed pretium varius non sagittis ut. Amet mi augue purus malesuada pulvinar.",
-    bg: "bg-blue-50 border-blue-100",
+    title: 'Cybersecurity',
+    desc: 'Protect your assets with top-tier security services.',
+    bg: 'bg-blue-50 border-blue-100',
   },
   {
     Icon: UserCheck,
-    title: "IT Consulting",
-    desc:
-      "Sagittis donec cursus sed pretium varius non sagittis ut. Amet mi augue purus malesuada pulvinar.",
-    bg: "bg-purple-50 border-purple-100",
+    title: 'IT Consulting',
+    desc: 'Expert advice to drive digital transformation.',
+    bg: 'bg-purple-50 border-purple-100',
+  },
+  {
+    Icon: Cloud,
+    title: 'DevOps Automation',
+    desc: 'Automate your pipelines and delivery processes.',
+    bg: 'bg-yellow-50 border-yellow-100',
+  },
+  {
+    Icon: Shield,
+    title: 'AI/ML Integration',
+    desc: 'Embed intelligence into your product features.',
+    bg: 'bg-red-50 border-red-100',
+  },
+  {
+    Icon: UserCheck,
+    title: 'Infrastructure Support',
+    desc: 'Maintain, monitor, and optimize your systems.',
+    bg: 'bg-indigo-50 border-indigo-100',
   },
 ];
 
-// container controls the stagger and initial delay
-const container = (shouldReduceMotion: boolean | null): Variants => ({
-  hidden: {},
-  show: shouldReduceMotion
-    ? { transition: { staggerChildren: 0 } }
-    : {
+// Duplicate for seamless loop
+const scrollingCourses = [...courses, ...courses];
+
+const AutoScrollCourses: React.FC = () => {
+  const reduceMotion = useReducedMotion();
+  const controls = useAnimation();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Start the animation
+  useEffect(() => {
+    if (!reduceMotion) {
+      controls.start({
+        x: ['0%', '-50%'],
         transition: {
-          delayChildren: 0.28,
-          staggerChildren: 0.18,
+          x: {
+            repeat: Infinity,
+            repeatType: 'loop',
+            ease: 'linear',
+            duration: 30,
+          },
+        },
+      });
+    }
+  }, [controls, reduceMotion]);
+
+  const handleMouseEnter = () => {
+    controls.stop();
+  };
+
+  const handleMouseLeave = () => {
+    controls.start({
+      x: ['0%', '-50%'],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'linear',
+          duration: 30,
         },
       },
-});
-
-// card entrance: subtle fade + lift
-const card = (shouldReduceMotion: boolean): Variants => ({
-  hidden: shouldReduceMotion
-    ? { opacity: 1, y: 0, scale: 1 }
-    : { opacity: 0, y: 28, scale: 0.996 },
-  show: shouldReduceMotion
-    ? { opacity: 1, y: 0, scale: 1 }
-    : {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
-      },
-});
-
-// icon pop animation
-const icon = (shouldReduceMotion: boolean): Variants => ({
-  hidden: shouldReduceMotion
-    ? { opacity: 1, scale: 1, rotate: 0 }
-    : { opacity: 0, scale: 0.86, rotate: -8 },
-  show: shouldReduceMotion
-    ? { opacity: 1, scale: 1, rotate: 0 }
-    : {
-        opacity: 1,
-        scale: 1,
-        rotate: 0,
-        transition: { duration: 0.48, ease: [0.22, 1, 0.36, 1] },
-      },
-});
-
-const ServicesSection: React.FC = () => {
-  const shouldReduceMotion = useReducedMotion();
+    });
+  };
 
   return (
-    <section className=" px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-8 text-center">
-          <div className="text-gray-400 mb-2">•</div>
-          <h2 className="text-4xl text-green-500 uppercase md:text-4xl font-extrabold mt-20 drop-shadow-lg">
-            Become a certified success
-          </h2>
-          <p className="mt-2 text-gray-500 text-xl mb-10">
-            Certifications are an excellent way to increase your earning power, drive project success, and stand out from the crowd. 
-          </p>
-        </div>
+    <section className="relative py-20 bg-white">
+      <div className="max-w-6xl mx-auto mb-10 text-center">
+        <h2 className="text-4xl font-extrabold text-green-500 uppercase drop-shadow-lg">
+          Explore Our Courses
+        </h2>
+        <p className="text-gray-600 mt-3 text-lg max-w-2xl mx-auto">
+          Stay ahead with our certified learning paths and real-world projects.
+        </p>
+      </div>
 
+      <div
+        className="relative overflow-x-hidden overflow-y-visible pt-12 pb-16"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        ref={containerRef}
+      >
         <motion.div
-          variants={container(shouldReduceMotion ?? false)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="flex gap-6 w-max"
+          animate={controls}
         >
-          {services.map((s) => (
-            <motion.article
-              key={s.title}
-              variants={card(shouldReduceMotion ?? false)}
-              whileHover={
-                shouldReduceMotion
-                  ? {}
-                  : {
-                      scale: 1.03,
-                      y: -6,
-                      transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
-                    }
-              }
-              className={`p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between border ${s.bg}`}
+          {scrollingCourses.map((course, index) => (
+            <motion.div
+              key={index}
+              whileHover={{
+                scale: 1.12,
+                y: -20,
+                zIndex: 20,
+                transition: { duration: 0.3 },
+              }}
+              className={`relative z-0 min-w-[280px] md:min-w-[320px] flex-shrink-0 border ${course.bg} rounded-xl shadow-lg p-6 flex flex-col justify-between transition-all duration-300`}
             >
               <div>
-                <motion.div
-                  variants={icon(shouldReduceMotion ?? false)}
-                  className="w-14 h-14 rounded-md flex items-center justify-center bg-white/70 text-green-600 mb-6 shadow-sm"
-                >
-                  <s.Icon size={26} aria-hidden />
-                </motion.div>
-
-                <h3 className="text-2xl font-semibold mb-3 text-gray-900">
-                  {s.title}
+                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-white/70 text-green-600 shadow-sm mb-4">
+                  <course.Icon size={24} />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {course.title}
                 </h3>
-                <p className="text-gray-700">{s.desc}</p>
+                <p className="text-sm text-gray-600">{course.desc}</p>
               </div>
-
-              <div className="mt-6">
+              <div className="mt-4">
                 <a
                   href="#"
-                  className="text-green-700 font-medium inline-block mt-2 hover:underline"
-                  aria-label={`Learn more about ${s.title}`}
+                  className="text-green-700 font-medium text-sm hover:underline"
                 >
-                  LEARN MORE
+                  Learn more →
                 </a>
               </div>
-            </motion.article>
+            </motion.div>
           ))}
         </motion.div>
       </div>
@@ -146,4 +148,4 @@ const ServicesSection: React.FC = () => {
   );
 };
 
-export default ServicesSection;
+export default AutoScrollCourses;

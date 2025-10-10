@@ -1,0 +1,147 @@
+/* === Backdrop === */
+.cookie-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+/* === Modal Box === */
+.cookie-modal {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === Icon === */
+.cookie-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* === Title === */
+.cookie-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* === Text === */
+.cookie-text {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.cookie-text a {
+  color: #69caff;
+  text-decoration: underline;
+}
+
+/* === Buttons Layout === */
+.cookie-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* === Button Base === */
+.cookie-btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+/* === Button Variants === */
+.cookie-btn.primary {
+  background: linear-gradient(to right, #38e65c, #00972e);
+  color: #fff;
+}
+
+.cookie-btn.secondary {
+  background: linear-gradient(to right, #1e43eb, #6800d2);
+  color: #fff;
+}
+
+.cookie-btn.neutral {
+  background: #2d2d2d;
+  color: #ccc;
+}
+
+/* === Hover Effects === */
+.cookie-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.cookie-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 100, 255, 0.4);
+}
+.cookie-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.cookie-toggle input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  accent-color: #00bfff;
+  cursor: pointer;
+}
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .cookie-modal {
+    padding: 1.5rem;
+  }
+
+  .cookie-title {
+    font-size: 1.5rem;
+  }
+
+  .cookie-text {
+    font-size: 0.95rem;
+  }
+
+  .cookie-btn {
+    font-size: 0.95rem;
+  }
+}
