@@ -9,7 +9,7 @@ import Certificates from "../components/Certificates";
 import Forum from "../components/Forum";
 import Students from "../components/Students";
 import Settings from "../components/Settings";
-import { ThemeProvider, ThemeContext } from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import { Moon, Sun } from "lucide-react";
 
 const Lms: React.FC = () => {

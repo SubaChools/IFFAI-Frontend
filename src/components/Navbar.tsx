@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ShoppingCart, Home } from "lucide-react";
+import { Search, ShoppingCart} from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/IFFAI Logo.png";
 
