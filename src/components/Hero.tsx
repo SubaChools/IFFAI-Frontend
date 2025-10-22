@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section className="relative w-screen h-screen overflow-hidden">
       <video
-        className="absolute top-25 w-screen h-screen object-fill"
+        className="absolute w-screen h-screen object-fill"
         autoPlay
         muted
         loop

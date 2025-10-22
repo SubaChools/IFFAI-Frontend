@@ -14,35 +14,32 @@ const navItems = [
       {
         heading: "Professional Certifications",
         links: [
-          "Certified Associate in Artificial Intelligence (CAAI)®",
-          "Artificial Intelligence Professional (AIP)®",
-          "Generative AI Professional (GAiP)®",
-          "All Professional Certifications",
-        ],
+          "Certified Associate in AI",
+          "Artificial Intelligence Professional",
+          "Generative AI Professional",
+          ],
       },
       {
         heading: "Specialized Certifications",
         links: [
-          "Certified AI Professional with Specialisation in Generative AI",
+          "Certified AI Professional with Specialisation in GAi",
           "Advanced AI in Logistics & Supply Chain Management",
           "Certificate Program in AI for Finance",
           "Advanced AI & IoT in Manufacturing Professional",
           "Digital Marketing with AI Applications",
           "Cloud & Edge	AI Mastery	",
-          "Certified Professional in Data Management	for	Healthcare (CPDM-HC)",
-          "Certified Manager	in AI Driven	Healthcare Administration	(CMA-HAI)",
-        ],
+          ],
       },
-      {
-        heading: "Certification Resources",
-        links: [
-          "Celebrate Your Certification",
-          "Maintain & Renew Your Certification",
-          "Check a Certification",
-          "Certification FAQs",
-          "IFFAI Official Mobile App",
-        ],
-      },
+      // {
+      //   heading: "Certification Resources",
+      //   links: [
+      //     "Celebrate Your Certification",
+      //     "Maintain & Renew Your Certification",
+      //     "Check a Certification",
+      //     "Certification FAQs",
+      //     "IFFAI Official Mobile App",
+      //   ],
+      // },
     ],
   },
   {
@@ -71,28 +68,28 @@ const navItems = [
           "Explore All Learning Topics",
         ],
       },
-      {
-        heading: "Thought Leadership",
-        links: [
-          "Thought Leadership",
-          "Brightline Initiative",
-          "AI Journal",
-          "Academic Sponsored Research",
-        ],
-      },
+      // {
+      //   heading: "Thought Leadership",
+      //   links: [
+      //     "Thought Leadership",
+      //     "Brightline Initiative",
+      //     "AI Journal",
+      //     "Academic Sponsored Research",
+      //   ],
+      // },
     ],
   },
   {
     title: "Resources",
     sections: [
-      {
-        heading: "Connect and Contribute",
-        links: [
-          "Infinity AI Tool",
-          "Online Community – opens in a new tab",
-          "IFFAI Global Alliance – opens in a new tab",
-        ],
-      },
+      // {
+      //   heading: "Connect and Contribute",
+      //   links: [
+      //     "Infinity AI Tool",
+      //     "Online Community – opens in a new tab",
+      //     "IFFAI Global Alliance – opens in a new tab",
+      //   ],
+      // },
       {
         heading: "Discover and Learn",
         links: [
@@ -106,7 +103,7 @@ const navItems = [
       {
         heading: "Grow Your Career",
         links: [
-          "IFFAI Job Board – opens in a new tab",
+          "IFFAI Job Board",
           "Career Resources",
           "Career Navigator",
           "For Military",
@@ -132,7 +129,7 @@ const navItems = [
         links: [
           "Infinity AI Tool",
           "IFFAI® Guide",
-          "Explore all Membership Benefits",
+          "Membership Benefits",
           "Membership Login",
         ],
       },
@@ -145,8 +142,8 @@ const navItems = [
         heading: "Volunteer Opportunities",
         links: [
           "Volunteer with IFFAI",
-          "Leadership Institute – opens in a new tab",
-          "Search Volunteer Opportunities – opens in a new tab",
+          "Leadership Institute",
+          "Search Volunteer Opportunities",
         ],
       },
       {
@@ -167,22 +164,21 @@ const navItems = [
         heading: "Attend Events",
         links: [
           "Attend Events",
-          "IFFAI Global Summit Series 2026 – opens in a new tab",
           "IFFAI Training",
         ],
       },
       {
         heading: "Virtual Events",
-        links: ["AI – opens in a new tab", "Webinars"],
+        links: ["AI ", "Webinars"],
       },
-      {
-        heading: "Participate in Events",
-        links: ["Speaker Opportunities", "Sponsorship & Exhibitor Opportunities"],
-      },
+      // {
+      //   heading: "Participate in Events",
+      //   links: ["Speaker Opportunities", "Sponsorship & Exhibitor Opportunities"],
+      // },
     ],
   },
   {
-    title: "IFFAI for Organizations",
+    title: "IFFAI for AI Solutions",
     sections: [
       {
         heading: "Enterprise Solutions",
@@ -208,10 +204,10 @@ const navItems = [
           "Training Partners",
         ],
       },
-      {
-        heading: "Business Resources",
-        links: ["Enterprise Research & Insights"],
-      },
+      // {
+      //   heading: "Business Resources",
+      //   links: ["Enterprise Research & Insights"],
+      // },
     ],
   },
   {
@@ -237,10 +233,10 @@ const navItems = [
           "IFFAI Awards",
         ],
       },
-      {
-        heading: "Press Room",
-        links: ["Press & Media", "Media Kit", "Request a Speaker"],
-      },
+      // {
+      //   heading: "Press Room",
+      //   links: ["Press & Media", "Media Kit", "Request a Speaker"],
+      // },
     ],
   },
 ];
@@ -259,14 +255,14 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full   fixed top-0 left-0 z-50 transition-all duration-300 ${
+      className={`w-full    top-0 left-0 z-50 transition-all duration-300 ${
         scrolled
           ? "backdrop-blur-md bg-white/70 shadow-sm border-b"
           : "bg-white"
       }`}
     >
       {/* TOP BAR */}
-      <div className="flex items-center justify-between px-6 py-3  border-b text-sm">
+      <div className="flex items-center justify-between bg-[#e1cbf1] px-6 py-3  border-b text-sm">
         <div className="flex items-center space-x-2">
           <img src={Logo} alt="IFFAI Logo" className="h-15" />
           <span className="font-semibold text-xl text-gray-700 hidden sm:block">
@@ -285,9 +281,9 @@ export default function Header() {
             <span>🏠</span>
           </a>
           {/* <Home className="w-5 h-5 text-gray-600" /> */}
-          <a href="" className="text-gray-600 hover:text-indigo-600">
+          {/* <a href="" className="text-gray-600 hover:text-indigo-600">
             Store
-          </a>
+          </a> */}
           <ShoppingCart className="w-5 h-5 text-gray-600" />
           <Link
             to="/register"
@@ -312,15 +308,17 @@ export default function Header() {
           {/* DESKTOP */}
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
             {navItems.map((item, index) => (
-  <li
-    key={item.title}
-    className="relative group"
-    onMouseEnter={() => setHoveredMenu(index)}
-    onMouseLeave={() => setHoveredMenu(null)}
-  >
-    <span className="relative cursor-pointer pb-1 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-green-600 after:transition-all after:duration-300 group-hover:after:w-full">
-      {item.title}
-    </span>
+      <li
+        key={item.title}
+        onMouseEnter={() => setHoveredMenu(index)}
+        onMouseLeave={() => setHoveredMenu(null)}
+        className={`relative px-4 py-2 rounded-md cursor-pointer transition-all duration-300 ${
+          hoveredMenu === index
+            ? "bg-green-600 text-white shadow-md"
+            : "hover:bg-green-100 hover:text-green-700"
+        }`}
+      >
+        {item.title}
 
     {/* Mega Dropdown */}
     <AnimatePresence>
@@ -331,22 +329,19 @@ export default function Header() {
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.25 }}
           className={`
-            absolute top-full mt-3
-            bg-white/95 backdrop-blur-md
-            shadow-2xl border border-gray-100 rounded-xl
-            max-w-[90vw]
-            min-w-[300px] md:min-w-[600px] lg:min-w-[800px]
+            absolute top-full mt-2
+            bg-white/95 backdrop-blur-sm
+            shadow-lg border border-gray-200 rounded-lg
+            max-w-[80vw]
+            min-w-[400px] md:min-w-[600px]
             overflow-x-auto
             ${index >= navItems.length - 2 ? "right-0" : "left-0"}
             z-50
           `}
-          style={{
-            maxWidth: "calc(100vw - 1rem)" // prevents overflow
-          }}
         >
           <div
             className={`
-              grid gap-6 p-6
+              grid gap-2 p-3
               grid-cols-1
               sm:grid-cols-2
               md:grid-cols-${item.sections.length >= 3 ? 3 : item.sections.length}
@@ -354,10 +349,10 @@ export default function Header() {
           >
             {item.sections.map((section, sIdx) => (
               <div key={sIdx} className="min-w-[200px]">
-                <h4 className="relative inline-block font-bold after:content-[''] after:block after:w-3/4 after:h-[1.5px] after:bg-green-500 after:mb-2 after:mx-auto">
+                <h4 className="font-semibold text-blue-800 mb-1 border-b border-green-400 inline-block pb-1">
                   {section.heading}
                 </h4>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-1 text-sm text-gray-600">
                   {section.links.map((link, i) => (
                     <li
                       key={i}

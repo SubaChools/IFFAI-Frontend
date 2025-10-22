@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
             <div
               key={index}
               onClick={() => setSelected(item)}
-              className={`flex-shrink-0 w-80 bg-gradient-to-b from-zinc-900 to-zinc-800 rounded-3xl shadow-2xl p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 ${
+              className={`flex-shrink-0 w-80 bg-gradient-to-b from-[oklch(0.59_0.19_7.27)] to-[#6800d2] rounded-3xl shadow-2xl p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 ${
                 index % 2 === 0 ? "-translate-y-6" : "translate-y-6"
               }`}
             >
@@ -92,13 +92,13 @@ const Testimonials: React.FC = () => {
                   className="w-24 h-24 object-cover rounded-full border-4 border-green-500 shadow-lg"
                 />
               </div>
-              <p className="text-gray-300 italic text-center mb-6 line-clamp-4">
+              <p className="text-white-300 italic text-center mb-6 line-clamp-4">
                 “{item.testimonial}”
               </p>
               <h3 className="text-center text-lg font-semibold text-white">
                 {item.name}
               </h3>
-              <p className="text-center text-sm text-green-300">{item.role}</p>
+              <p className="text-center text-sm text-green-300 font-semibold">{item.role}</p>
             </div>
           ))}
         </div>
@@ -106,11 +106,11 @@ const Testimonials: React.FC = () => {
 
       {/* Modal Popup */}
       {selected && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
-          <div className="bg-zinc-900 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+        <div className="fixed inset-0 bg-black/60 bg-opacity-70 flex justify-center items-center z-50 p-4">
+          <div className="bg-indigo-500/70 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl"
+              className="absolute top-3 right-4 text-gray-100 hover:text-white text-2xl"
             >
               &times;
             </button>
@@ -124,7 +124,7 @@ const Testimonials: React.FC = () => {
               <h3 className="text-xl font-bold text-green-400 mb-2">
                 {selected.name}
               </h3>
-              <p className="text-sm text-gray-400 mb-4 text-center">
+              <p className="text-sm font-semibold text-white-400 mb-4 text-center">
                 {selected.role}
               </p>
               <p className="text-gray-200 text-center leading-relaxed italic">

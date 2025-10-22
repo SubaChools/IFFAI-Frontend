@@ -9,6 +9,7 @@ import Certificates from "../components/Certificates";
 import Forum from "../components/Forum";
 import Students from "../components/Students";
 import Settings from "../components/Settings";
+import Instructors from "../components/admin/Instructors";
 import { ThemeContext } from "../context/ThemeContext";
 import { Moon, Sun } from "lucide-react";
 
@@ -42,6 +43,7 @@ const Lms: React.FC = () => {
           <Route path="forum" element={<Forum />} />
           <Route path="students" element={<Students />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="/admin/Instructors" element={<Instructors />} />
           
         </Routes>
       </main>

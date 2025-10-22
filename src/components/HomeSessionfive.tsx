@@ -92,7 +92,7 @@ const AutoScrollCourses: React.FC = () => {
   };
 
   return (
-    <section className="relative py-20 bg-white">
+    <section className="relative py-10 bg-white">
       <div className="max-w-6xl mx-auto mb-10 text-center">
         <h2 className="text-4xl font-extrabold text-green-500 uppercase drop-shadow-lg">
           Explore Our Courses
@@ -103,7 +103,7 @@ const AutoScrollCourses: React.FC = () => {
       </div>
 
       <div
-        className="relative overflow-x-hidden overflow-y-visible pt-12 pb-16"
+        className="relative overflow-x-hidden overflow-y-visible pt-12 "
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         ref={containerRef}

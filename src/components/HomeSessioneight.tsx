@@ -38,16 +38,16 @@ const fadeUp: Variants = {
 // Define the component's return type as JSX.Element
 const Certificate: React.FC = () =>  {
   return (
-    <div className="min-h-screen bg-slate-50 mt-20">
+    <div className="min-h-screen bg-slate-50 mt-10 rounded-2xl rounded-tl-4xl">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-6 md:gap-10">
           {/* LEFT: fixed-ish image */}
           <aside className="md:w-1/3 lg:w-2/5 md:sticky md:top-0 self-start z-20">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow">
+            <div className="overflow-hidden rounded-2xl  ">
               <img
                 src={leftHero}
                 alt="Fixed showcase"
-                className="w-full h-[60vh] md:h-[80vh] object-cover"
+                className="w-full h-[60vh] md:h-[80vh] rounded-tr-[11rem] rounded-tl-[11rem]  object-cover"
                 loading="lazy"
               />
             </div>
@@ -68,7 +68,7 @@ const Certificate: React.FC = () =>  {
               {rightImages.map((img, i) => (
                 <motion.article
                   key={img.id}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow"
+                  className="overflow-hidden rounded-2xl  border border-slate-200 bg-white shadow"
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="visible"

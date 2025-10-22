@@ -29,11 +29,63 @@ const HomePage: React.FC = () => {
           <p className="text-4xl text-green-500 uppercase md:text-4xl font-extrabold mt-20 drop-shadow-lg mb-2">
             Who We Are
           </p>
-          <h1 className="text-4xl md:text-5xl uppercase font-extralight text-gray-900 mb-4">
-            AI For All
-          </h1>
+           <motion.h1
+            className="text-4xl md:text-5xl text-center uppercase font-extralight mb-4"
+            style={{ display: "inline-block" }}
+            animate={{
+              scale: [1, 1.1, 1, 1.1, 1],
+              rotate: [0, 2, -2, 2, 0],
+              y: [0, -5, 0, 5, 0],
+              transition: {
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              },
+            }}
+          >
+            <motion.span
+              className="text-red-500 font-bold  bg-clip-text "
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              AI{" "}
+            </motion.span>
+            <motion.span
+              className="text-indigo-600 font-bold bg-clip-text "
+              animate={{
+                backgroundPosition: ["100% 50%", "0% 50%", "100% 50%"],
+                transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              For{" "}
+            </motion.span>
+            <motion.span
+              className="text-green-500 font-bold bg-clip-text "
+              animate={{
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              All
+            </motion.span>
+          </motion.h1>
           <p className="text-gray-600 leading-relaxed text-xl">
-            IFFAI	stands	as	the	preeminent	global	authority	in	the	domain	of	Arti icial	Intelligence, serving	as	the	foremost	professional	body	dedicated	to	advancing	excellence,	ethics,	and	innovation	in	AI	across	industries	and	borders.		
+           Artificial Intelligence is redefining every dimension of human potential — from how we create, communicate, and design, to how we heal, innovate, and lead. The International Federation for Artificial Intelligence (IFFAI) is a global federation of excellence dedicated to advancing Artificial Intelligence, ethical innovation, and inclusive digital transformation.
           </p>
         </motion.div>
 
@@ -78,11 +130,9 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h2 className="text-2xl font-medium mb-3 text-gray-700">Accrediting Excellence in AI</h2>
+            {/* <h2 className="text-2xl font-medium mb-3 text-gray-700">Accrediting Excellence in AI</h2> */}
             <p className="text-gray-600 leading-relaxed text-xl">
-              Recognised	under	NAICS	Code	813920,	IFFAI	operates	as	a	distinguished 
-accreditation	and	certi ication	entity,	setting	the	gold	standard	for	professional	
-competence	and	institutional	integrity	in	the	AI	ecosystem.	
+              Headquartered in Chicago, Illinois, USA, IFFAI serves as an international accrediting body, knowledge consortium, and innovation catalyst, connecting academia, industry, and governments across continents.
             </p>
           </motion.div>
 
@@ -93,11 +143,11 @@ competence	and	institutional	integrity	in	the	AI	ecosystem.
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Education for All</h2>
+            {/* <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Education for All</h2> */}
             <p className="text-gray-600 leading-relaxed text-xl">
-              IFFAI’s	mandate	extends	from	AI	electives	for	K–12	education	to	specialist	
-certi ications	in	Generative	AI,	Finance,	Healthcare,	Supply	Chain,	Cybersecurity,	and	
-Digital	Transformation.	
+              Our guiding philosophy is embodied in our global motto — “AI for All.”
+We believe Artificial Intelligence should be a force that uplifts, educates, and empowers every human being, regardless of geography, discipline, or background.
+	
             </p>
           </motion.div>
            <motion.div
@@ -107,11 +157,35 @@ Digital	Transformation.
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Hubs, Research, and Responsible Adoption</h2>
+            {/* <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Education for All</h2> */}
+            <p className="text-gray-600 leading-relaxed text-xl">
+               <motion.div
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            {/* <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Education for All</h2> */}
+            <p className="text-gray-600 leading-relaxed text-xl">
+              Our Innovative Programs and Certifications are designed to empower learners, professionals, and institutions with competencies that merge technical mastery, ethical intelligence, and human creativity.
+            </p>
+          </motion.div>
+	
+            </p>
+          </motion.div>
+           <motion.div
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            {/* <h2 className="text-2xl font-medium mb-3 text-gray-700">AI Hubs, Research, and Responsible Adoption</h2> */}
             <p className="text-gray-600 leading-relaxed text-xl">
               Beyond	education,	IFFAI	establishes	AI	Hubs	and	Centres	of	Excellence,	driving	research,	
 consulting,	and	workforce	development	while	ensuring	inclusivity	and	responsible	
-adoption	of	Arti icial	Intelligence	across	sectors.	
+adoption	of	Artificial	Intelligence	across	sectors.	
             </p>
           </motion.div>
         </div>
