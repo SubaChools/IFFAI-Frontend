@@ -4,6 +4,21 @@ import React, { useState} from "react";
 import { motion } from 'framer-motion';
 import { Cpu, Bot, CircuitBoard, Zap, CheckCircle2, Brain, Users, Sparkles,  Clock, Monitor, DollarSign, Calendar, Star  } from 'lucide-react';
 import type { Variants } from "framer-motion";
+import F1 from "../assets/images/choose1.svg";
+import F2 from "../assets/images/choose2.svg";
+import F3 from "../assets/images/choose4.svg";
+import F4 from "../assets/images/choose3.svg";
+import AIgif from "../assets/images/AIgif.avif";
+import bannervideo from "../assets/images/banner-video.mp4";
+import certific from "../assets/certificate/1.jpg";
+import banner from "../assets/images/banner.png"; 
+import robo from "../assets/images/df.png";
+import AIbg from "../assets/images/df.png";
+import AIrobo from "../assets/images/dk.jpg";
+import AIillu from "../assets/images/dh.png";
+import module1 from "../assets/images/project1.jpg";
+import module2 from "../assets/images/project2.jpg";
+import module3 from "../assets/images/project3.jpg";
 
  const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -65,55 +80,38 @@ const NNUCourseLandingPage = () => {
    //Feature Section
   const features = [
     {
-      icon: "src/assets/images/choose1.svg",
+      icon: F1,
       title: "Decode the Mind Behind the Machine",
       description: "Understand neurons, layers, activation functions, and how AI recognizes patterns."
     },
     {
-      icon: "src/assets/images/choose2.svg",
+      icon: F2,
       title: "Build Your First Neural Network",
       description: "Hands-on Python coding to train your first feedforward neural model."
     },
     {
-      icon: "src/assets/images/choose4.svg",
+      icon: F3,
       title: "Explore Cutting-Edge Architectures ",
       description: "CNNs, RNNs, and Autoencoders powering real-world AI applications."
     },
     {
-      icon: "src/assets/images/choose3.svg",
+      icon: F4,
       title: "Master Learning Techniques",
       description: "Explore backpropagation and optimization to make smarter networks."
     },
     {
-      icon: "src/assets/images/choose1.svg",
+      icon: F1,
       title: "Learn AI with Ethics",
       description: "Bias, transparency, and responsible AI practices for building trustworthy systems."
     },
     {
-      icon: "src/assets/images/choose2.svg",
+      icon: F2,
       title: "Portfolio-Ready Showcase ",
       description: "Complete a mini-capstone project to present your neural intelligence skills."
     }
   ]
 
-  // const additionalFeatures = [
-  //   {
-  //     icon: "src/assets/images/choose2.svg",
-  //     title: "Making Smarter Networks",
-  //     description: "Explore the ethics of learning machines. Bias, transparency, and responsible AI — learn to build with empathy and accountability."
-  //   },
-  //   {
-  //     icon: "src/assets/images/choose3.svg",
-  //     title: "Your Neural Showcase",
-  //     description: "Conclude with a Mini Capstone Project — design, train, and present your own neural model. Leave with a portfolio-ready proof of skill."
-  //   },
-  //   {
-  //     icon: "src/assets/images/choose4.svg",
-  //     title: "Architectures That Changed the World",
-  //     description: "Step into the world of CNNs, RNNs, and Autoencoders — the models that power image recognition, chatbots, and self-driving cars."
-  //   }
-  // ]
-
+ 
 //WHY NNU
 const nnufeatures = [
     'Learn how machines think, not just how to code.',
@@ -131,26 +129,14 @@ const points = [
     "No advanced math required — just curiosity, logic, and a spark of ambition.",
   ]
 
-  //Certificate
 
-// interface Certificate {
-//   img: string;
-//   title: string;
-//   desc: string;
-// }
-
-// const certificate: Certificate = {
-//   img: "src/assets/images/service1.jpg", // your certificate image
-//   title: "AI Professional Certification",
-//   desc: "This certification validates your applied expertise in Artificial Intelligence and Neural Systems.",
-// };
 
   const openPopup = () => setIsPopupOpen(true);
   const closePopup = () => setIsPopupOpen(false);
    const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   const certificate = {
-    img: '/src/assets/certificate/1.jpg',
+    img: certific,
     title: 'IFFAI Certified AI Professional',
     desc: 'Issued by International Federation for Artificial Intelligence • 2025'
   }
@@ -193,32 +179,32 @@ const points = [
     {
       title: 'The Digital Brain',
       description: 'Understanding Neurons, Layers & Learning',
-      img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
+      img: AIgif,
     },
     {
       title: 'Python Meets Intelligence',
       description: 'Setting Up Your Neural Playground',
-      img: 'src/assets/images/project2.jpg',
+      img: module2,
     },
     {
       title: 'The Hidden Genius',
       description: 'Layers That Learn What You Don’t See',
-      img: 'src/assets/images/project3.jpg',
+      img: module3,
     },
     {
       title: 'Taming the Chaos',
       description: 'Optimization & Regularization Secrets',
-      img: 'src/assets/images/project1.jpg',
+      img: module1,
     },
     {
       title: 'Neural Realms',
       description: 'Vision, Speech & Sequential Learning Explained',
-      img: 'src/assets/images/project2.jpg',
+      img: module2,
     },
     {
       title: 'Ethics of Intelligence',
       description: 'Building AI with Heart and Integrity',
-      img: 'src/assets/images/project3.jpg',
+      img: module3,
     },
   ]
 
@@ -237,7 +223,7 @@ const points = [
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
         >
-            <source src="src/assets/images/banner-video.mp4" type="video/mp4" />
+            <source src={bannervideo} type="video/mp4" />
         </video>
 
         {/* 🔹 Overlay (optional for better contrast) */}
@@ -293,7 +279,7 @@ const points = [
                 }}
                 >
                 <img
-                    src="src/assets/images/banner.png"
+                    src={banner}
                     alt="Neural Networks Banner"
                     className="w-full max-w-md drop-shadow-[0_8px_15px_rgba(0,0,0,0.4)]"
                     style={{ transform: "translateZ(30px)" }}
@@ -319,7 +305,7 @@ const points = [
         >
           {/* Main Static Image */}
           <motion.img
-            src="src/assets/images/df.png"  // ✅ your own image here
+            src={robo}  // ✅ your own image here
             alt="AI Robotics"
             className="rounded-2xl  w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
           />
@@ -383,14 +369,7 @@ const points = [
             From perceptrons to deep networks, you'll explore how artificial neurons mimic human intelligence. Guided through visual demos, hands-on labs, and mini-projects, you'll uncover the "why" behind AI's magic — and learn to build your very first neural model.
           </p>
 
-          {/* <motion.a
-            href="/about"
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center px-6 py-3 rounded-full bg-green-700 text-white font-semibold hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-xl"
-          >
-            Learn More About Us
-            <i className="ri-arrow-right-up-line ml-2"></i>
-          </motion.a> */}
+ 
         </motion.div>
       </div>
     </section>
@@ -447,7 +426,7 @@ const points = [
       {/* ✅ Background Image Only */}
       <div className="absolute inset-0">
         <img
-          src="src/assets/images/df.png"
+          src={AIbg}
           alt="AI Background"
           className="w-full h-full object-cover object-center"
         />
@@ -526,7 +505,7 @@ const points = [
       {/* Background Robotics Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="src/assets/images/dk.jpg"
+          src={AIrobo}
           alt="AI Robotics Background"
           className="w-full h-full object-cover opacity-100"
         />
@@ -542,7 +521,7 @@ const points = [
           className="relative flex justify-center items-center"
         >
           <motion.img
-            src="src/assets/images/dh.png"
+            src={AIillu}
             alt="AI Robot"
             className="w-full h-fullmax-w-lg rounded-2xl "
             animate={{ y: [0, -15, 0] }}
