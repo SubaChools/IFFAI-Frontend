@@ -12,34 +12,30 @@ const navItems = [
     title: "Certifications",
     sections: [
       {
-        heading: "Professional Certifications",
+        heading: "",
         links: [
-          "Certified Associate in AI",
-          "Artificial Intelligence Professional",
-          "Generative AI Professional",
-          ],
+          { name: "Core Artificial Intelligence & Machine Learning", path: "/product" },
+          { name: "AI in Technology, Robotics & Automation", path: "/product2" },
+          { name: "AI in Leadership, Strategy & Policy", path: "/product6" },
+          { name: "AI in Education & Learning Technologies", path: "/product7" },
+         // { name: "AI for Climate, Energy & Sustainability", path: "/ai-climate" },
+          // { name: "AI in Cybersecurity, Defense & Intelligence", path: "/ai-cybersecurity" },
+          { name: "Frontier & Emerging AI Domains", path: "/product10" },
+          { name: "AI in Supply Chain, Logistics & Operations Management", path: "/product12" },
+        ],
       },
       {
-        heading: "Specialized Certifications",
+        heading: "",
         links: [
-          "Certified AI Professional with Specialisation in GAi",
-          "Advanced AI in Logistics & Supply Chain Management",
-          "Certificate Program in AI for Finance",
-          "Advanced AI & IoT in Manufacturing Professional",
-          "Digital Marketing with AI Applications",
-          "Cloud & Edge	AI Mastery	",
-          ],
+          { name: "AI in Healthcare & Life Sciences", path: "/product3" },
+          { name: "AI in Finance, Economics & Business Intelligence", path: "/product4" },
+          { name: "Generative AI & Creative Intelligence", path: "/product5" },
+          { name: "AI for Climate, Energy & Sustainability", path: "/product8" },
+          { name: "AI in Cybersecurity, Defense & Intelligence", path: "/product9" },
+          { name: "AI in Agriculture", path: "/product11" },
+         
+        ],
       },
-      // {
-      //   heading: "Certification Resources",
-      //   links: [
-      //     "Celebrate Your Certification",
-      //     "Maintain & Renew Your Certification",
-      //     "Check a Certification",
-      //     "Certification FAQs",
-      //     "IFFAI Official Mobile App",
-      //   ],
-      // },
     ],
   },
   {
@@ -262,7 +258,7 @@ export default function Header() {
       }`}
     >
       {/* TOP BAR */}
-      <div className="flex items-center justify-between bg-[#e1cbf1] px-6 py-3  border-b text-sm">
+      <div className="flex items-center justify-between bg-gradient-to-br from-green-50 to-teal-100 px-6 py-2  text-sm">
         <div className="flex items-center space-x-2">
           <img src={Logo} alt="IFFAI Logo" className="h-15" />
           <span className="font-semibold text-xl text-gray-700 hidden sm:block">
@@ -304,7 +300,7 @@ export default function Header() {
 
       {/* NAVBAR */}
       <nav className="relative ">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between ">
           {/* DESKTOP */}
           <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
             {navItems.map((item, index) => (
@@ -349,21 +345,42 @@ export default function Header() {
           >
             {item.sections.map((section, sIdx) => (
               <div key={sIdx} className="min-w-[200px]">
-                <h4 className="font-semibold text-blue-800 mb-1 border-b border-green-400 inline-block pb-1">
-                  {section.heading}
-                </h4>
+                {section.heading && (
+                  <h4 className="font-semibold text-blue-800 mb-1 border-b border-green-400 inline-block pb-1">
+                    {section.heading}
+                  </h4>
+                )}
+
                 <ul className="space-y-1 text-sm text-gray-600">
-                  {section.links.map((link, i) => (
-                    <li
-                      key={i}
-                      className="hover:text-green-700 cursor-pointer transition-colors break-words px-2 py-1 rounded hover:bg-green-50"
-                    >
-                      {link}
-                    </li>
-                  ))}
+                  {section.links.map((link, i) => {
+                    // Handle links with navigation
+                    if (typeof link !== "string") {
+                      return (
+                        <li key={i}>
+                          <Link
+                            to={link.path}
+                            className="hover:text-green-700 cursor-pointer transition-colors break-words px-2 py-1 rounded hover:bg-green-50 block"
+                          >
+                            {link.name}
+                          </Link>
+                        </li>
+                      );
+                    }
+
+                    // Handle simple text links
+                    return (
+                      <li
+                        key={i}
+                        className="hover:text-green-700 cursor-pointer transition-colors break-words px-2 py-1 rounded hover:bg-green-50"
+                      >
+                        {link}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
+
           </div>
         </motion.div>
       )}
@@ -403,32 +420,56 @@ export default function Header() {
                     {item.title}
                     <span>{activeMenu === idx ? "−" : "+"}</span>
                   </button>
-                  <AnimatePresence>
-                    {activeMenu === idx && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="mt-2 space-y-2 pl-3 overflow-hidden"
-                      >
-                        {item.sections.map((section, sIdx) => (
-                          <div key={sIdx}>
+                 <AnimatePresence>
+                  {activeMenu === idx && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-2 space-y-2 pl-3 overflow-hidden"
+                    >
+                      {item.sections.map((section, sIdx) => (
+                        <div key={sIdx}>
+                          {section.heading && (
                             <h4 className="font-semibold text-sm text-gray-700 mt-2">
                               {section.heading}
                             </h4>
-                            <ul className="pl-2 text-sm text-gray-600 space-y-1">
-                              {section.links.map((link, lIdx) => (
-                                <li key={lIdx} className="hover:text-indigo-600">
+                          )}
+                          <ul className="pl-2 text-sm text-gray-600 space-y-1">
+                            {section.links.map((link, lIdx) => {
+                              if (typeof link !== "string") {
+                                // ✅ Link object with path
+                                return (
+                                  <li key={lIdx}>
+                                    <Link
+                                      to={link.path}
+                                      className="block hover:text-indigo-600 transition-colors"
+                                      onClick={() => setMobileOpen(false)} // close menu on click
+                                    >
+                                      {link.name}
+                                    </Link>
+                                  </li>
+                                );
+                              }
+
+                              // ✅ Plain text fallback
+                              return (
+                                <li
+                                  key={lIdx}
+                                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                                >
                                   {link}
                                 </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 </div>
               ))}
             </motion.div>

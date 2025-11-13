@@ -122,7 +122,7 @@ const getPasswordStrength = (
     window.location.href = githubAuthUrl;
   };
    return (
-     <div className="flex mt-35 flex-col md:flex-row min-h-screen">
+     <div className="flex flex-col md:flex-row min-h-screen">
       {/* Left Side - Image */}
       <div className="w-full md:w-1/2 h-64 sm:h-80 md:h-auto">
         <img

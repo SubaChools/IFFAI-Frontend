@@ -71,7 +71,7 @@ const PartnersLogoGrid: React.FC = () => (
           key={rowIndex}
           className="flex mb-10 w-[max-content]"
           animate={{ x: rowIndex % 2 ? ["0%", "-50%"] : ["-50%", "0%"] }}
-          transition={{ duration:60, repeat: Infinity, ease: "linear" }}
+          transition={{ duration:100, repeat: Infinity, ease: "linear" }}
         >
           {[...logos, ...logos].map((logo, idx) => (
             <motion.div

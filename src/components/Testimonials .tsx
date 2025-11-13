@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
             <div
               key={index}
               onClick={() => setSelected(item)}
-              className={`flex-shrink-0 w-80 bg-gradient-to-b from-[oklch(0.59_0.19_7.27)] to-[#6800d2] rounded-3xl shadow-2xl p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 ${
+              className={`flex-shrink-0 w-80 bg-gradient-to-br from-rose-50 to-pink-100 rounded-3xl shadow-2xl p-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 ${
                 index % 2 === 0 ? "-translate-y-6" : "translate-y-6"
               }`}
             >
@@ -92,13 +92,13 @@ const Testimonials: React.FC = () => {
                   className="w-24 h-24 object-cover rounded-full border-4 border-green-500 shadow-lg"
                 />
               </div>
-              <p className="text-white-300 italic text-center mb-6 line-clamp-4">
+              <p className="text-black italic text-center mb-6 line-clamp-4">
                 “{item.testimonial}”
               </p>
-              <h3 className="text-center text-lg font-semibold text-white">
+              <h3 className="text-center text-lg font-bold text-blue-900">
                 {item.name}
               </h3>
-              <p className="text-center text-sm text-green-300 font-semibold">{item.role}</p>
+              <p className="text-center text-sm text-green-700 font-semibold">{item.role}</p>
             </div>
           ))}
         </div>

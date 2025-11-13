@@ -67,7 +67,7 @@ const RegNow: React.FC = () => {
         >
           {/* Gradient Animated Heading */}
           <h2 className="text-4xl font-extrabold uppercase mb-6 bg-clip-text text-green-500">
-            Start learning
+            Our Legacy of Excellence
           </h2>
 
           {/* Animated List */}
