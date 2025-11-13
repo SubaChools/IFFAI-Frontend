@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useReducedMotion } from "framer-motion";
-import { Cpu, FileText , HeartPulse, TrendingUp, HardDrive, Users, BookOpen, Sun, Key, Rocket  } from "lucide-react";
+import { Cpu, FileText , HeartPulse, TrendingUp, HardDrive, Users, BookOpen, Sun, Key, Rocket} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 type Course = {
   Icon: LucideIcon;
